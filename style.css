@@ -1,0 +1,104 @@
+h1{
+  color: white;
+}
+h3,h5{
+    font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: yellow;
+}
+
+.logoaulab{
+  width: 100px;
+  height: 20px;
+}
+
+p{
+    font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+body{
+  background-color: black;
+  background-image: url(../media/sfondo.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+article a{
+  color: white;
+}
+
+article a:hover{
+  background-color: rgb(255, 255, 0);
+  color: black;
+}
+
+body > nav > ul > li a, li{
+  color: white;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav>ul{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.flex{
+  width: 60%;
+  display: flex;
+  height: 70vh;
+  justify-content: space-evenly;
+  
+}
+
+.article-flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+  padding: 5px;
+  border: 1px solid yellow;
+}
+
+img{
+  width: 300px;
+}
+
+aside{
+  width: 35%;
+  background-color: #f5e57c;
+  
+}
+
+aside h3, aside p{
+  color: black;
+}
+
+main{
+    display: inline-flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 200px;
+}
+
+header nav span{
+  color: yellow;
+}
+
+header nav a, .home{
+  color: grey;
+}
+
+.btn{
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+}
+
