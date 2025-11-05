@@ -1,63 +1,116 @@
-h1{
-  color: white;
+
+/* BASE                          */
+
+body {
+  background-color: black;
 }
-h3,h5{
-    font-family: "Lato", sans-serif;
+
+h1 {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3, h5 {
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: yellow;
 }
 
-.logoaulab{
-  width: 100px;
-  height: 20px;
-}
-
-p{
-    font-family: "Inter Tight", sans-serif;
+p {
+  font-family: "Inter Tight", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   color: white;
 }
 
-body{
-  background-color: black;
-  background-image: url(../media/sfondo.png);
-  background-repeat: no-repeat;
-  background-position: top center;
+img {
+  width: 300px;
 }
 
-article a{
-  color: white;
-}
-
-article a:hover{
-  background-color: rgb(255, 255, 0);
+.btn {
+  background-color: yellow;
   color: black;
+  cursor: pointer;
 }
 
-body > nav > ul > li a, li{
+.torna-su {
+  background-color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* NAVBAR PRINCIPALE             */
+
+.logoaulab {
+  width: 100px;
+  height: 20px;
+}
+
+body > nav > ul > li a,
+body > nav > ul > li {
   color: white;
   text-decoration: none;
   list-style: none;
 }
 
-nav>ul{
+nav > ul {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
 
-.flex{
-  width: 60%;
-  display: flex;
-  height: 70vh;
-  justify-content: space-evenly;
-  
+/* HEADER / INTESTAZIONE          */
+
+.intestazione {
+  min-height: 100vh;
+  background-image: url(../media/sfondo.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
 }
 
-.article-flex{
+/* NAV HOME-BLOG SOTTO HEADER     */
+
+nav.home {
+  color: grey;
+}
+
+nav.home a {
+  color: grey;
+  text-decoration: none;
+}
+
+nav.home span {
+  color: yellow;
+}
+
+/* MAIN / CONTENUTI               */
+
+main {
+  display: flex;          
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;              
+  margin-top: 50px;       
+}
+
+.flex {
+  width: 60%;
+  display: flex;
+  height: 60vh;
+  justify-content: space-evenly;
+}
+
+.article-flex {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,40 +118,90 @@ nav>ul{
   width: 30%;
   padding: 5px;
   border: 1px solid yellow;
-}
-
-img{
-  width: 300px;
-}
-
-aside{
-  width: 35%;
-  background-color: #f5e57c;
+  position: relative;
+   overflow: hidden;
   
 }
 
-aside h3, aside p{
+.zoom-square {
+    position: absolute;
+    top: 10px;   
+    left: 10px;  
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    animation: zoom-square 3s infinite alternate ease-in-out;
+    z-index: 2;
+}
+
+@keyframes zoom-square {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+article a:hover {
+  background-color: rgb(255, 255, 0);
   color: black;
 }
 
-main{
-    display: inline-flex;
+aside {
+  width: 40%;
+  background-color: #f5e57c;
+}
+
+aside h3,
+aside p {
+  color: black;
+}
+
+/* MEDIA QUERY (MOBILE)           */
+
+@media screen and (max-width: 600px) {
+  .logoaulab {
+    width: 70px;
+    height: auto;
+  }
+
+  nav > ul > li a,
+  nav > ul > li {
+    font-size: 14px;
+  }
+
+  nav > ul{
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: start;
-    margin-top: 200px;
-}
+  }
 
-header nav span{
-  color: yellow;
-}
+  main {
+    display: block;
+    margin-top: 20px; 
+  }
 
-header nav a, .home{
-  color: grey;
-}
+  .flex {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
 
-.btn{
-  background-color: yellow;
-  color: black;
-  cursor: pointer;
-}
+  .article-flex,
+  aside {
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
 
+  aside {
+    margin-top: 20px;
+  }
+
+  .torna-su {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
